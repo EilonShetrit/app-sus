@@ -6,63 +6,10 @@ export const missKeepService = {
 }
 
 //--MODEL--//
-const notes = [
-    {
-        type: 'NoteText',
-        isPinned: true,
-        info: {
-            txt: 'Fullstack Me Baby!'
-        }
-    },
-    {
-        type: 'NoteImg',
-        info: {
-            url: 'http://some-img/me',
-            title: 'Me playing Mi'
-        },
-        style: {
-            backgroundColor: '#00d'
-        }
-    },
-    {
-        type: 'NoteVideo',
-        info: {
-            url: 'http://some-img/me',
-            title: 'Me playing Mi'
-        }
-    },
-    {
-        type: 'NoteTodos',
-        info: {
-            label: 'How was it:',
-            todos: [
-                {
-
-                    txt: 'Do that',
-                    doneAt: null
-                },
-                {
-
-                    txt: 'Do this',
-                    doneAt: 187111111
-                }
-            ]
-        }
-    }
-]
-
 
 function getNotes() {
-    return Promise.resolve(createNotes());
+    return createNotes();
 }
-
-
-function getNoteById(noteId) {
-    const note = notes.find(note => note.id === noteId)
-    return Promise.resolve(note)
-}
-
-
 
 function createNotes() {
     const notes = []
@@ -70,7 +17,12 @@ function createNotes() {
     notes.push(noteImg('FiakIbasa'));
     notes.push(noteTodos('Subali,Pesha'));
     notes.push(noteVidoe('MitsuBashi'));
-    return notes;
+    return Promise.resolve(notes);
+}
+
+function getNoteById(noteId) {
+    const note = notes.find(note => note.id === noteId)
+    return Promise.resolve(note)
 }
 
 
