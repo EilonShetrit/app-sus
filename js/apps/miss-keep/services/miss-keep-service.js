@@ -1,46 +1,49 @@
-// export const missKeepService = {
-//     getNotes
-// }
+// import {utilService} from '.'
 
-// const notes = [
-//     {
-//         type: "NoteText",
-//         isPinned: true,
-//         info: {
-//             txt: "Fullstack Me Baby!"
-//         }
-//     },
-//     {
-//         type: "NoteImg",
-//         info: {
-//             url: "http://some-img/me",
-//             title: "Me playing Mi"
-//         },
-//         style: {
-//             backgroundColor: "#00d"
-//         }
-//     },
-//     {
-//         type: "NoteTodos",
-//         info: {
-//             label: "How was it:",
-//             todos: [
-//                 {
-//                     txt: "Do that",
-//                     doneAt: null
-//                 },
-//                 {
-//                     txt: "Do this",
-//                     doneAt: 187111111
-//                 }
-//             ]
-//         }
-//     }
-// ];
+export const missKeepService = {
+    getNotes
+}
+
+const notes = [
+    {
+        type: "NoteText",
+        isPinned: true,
+        info: {
+            txt: "Fullstack Me Baby!"
+        }
+    },
+    {
+        type: "NoteImg",
+        info: {
+            url: "http://some-img/me",
+            title: "Me playing Mi"
+        },
+        style: {
+            backgroundColor: "#00d"
+        }
+    },
+    {
+        type: "NoteTodos",
+        info: {
+            label: "How was it:",
+            todos: [
+                {
+                    
+                    txt: "Do that",
+                    doneAt: null
+                },
+                {
+                    txt: "Do this",
+                    doneAt: 187111111
+                }
+            ]
+        }
+    }
+];
 
 
-// function getNotes() {
-//     return Promise.resolve(notes);
-// }
+function getNotes() {
+    return Promise.resolve(notes);
+}
 
 
