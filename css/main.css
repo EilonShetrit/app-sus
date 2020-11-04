@@ -1,0 +1,35 @@
+@font-face {
+    font-family: comReg;
+    src: url(../assets/fonts/Comfortaa-Medium.ttf);
+}
+@font-face {
+    font-family: comBold;
+    src: url(../assets/fonts/Comfortaa-Bold.ttf);
+}
+
+*{
+    box-sizing: border-box;
+}
+html{
+    font-family: comReg,sans-serif;
+    color: rgb(50, 50, 50);
+}
+
+body{
+    margin: 0;
+    /* COLORS */
+    /* background-color: #FFFFFF;
+    background-color: #FFF8E8;
+    background-color: #FCD581;
+    background-color: #D52941; */
+    background-color: #990D35;
+    /* background-color: #2C1320; screem-purple */
+    text-align: center;
+    font-size: 1rem;
+    /* letter-spacing:0.48; */
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
+
+
