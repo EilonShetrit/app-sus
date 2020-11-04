@@ -1,8 +1,8 @@
-import missBooks from './apps/miss-book/miss-book.js';
-import misterEmail from './apps/mister-email/pages/mister-email.js';
-import missKeep from './apps/miss-keep/miss-keep.js';
-import aboutUs from './pages/about.js';
-import homePage from './pages/home-page.js';
+import missBooks from './apps/miss-book/miss-book.js'
+import misterEmail from './apps/mister-email/pages/mister-email.js'
+import missKeep from './apps/miss-keep/pages/miss-keep.js'
+import aboutUs from './pages/about.js'
+import homePage from './pages/home-page.js'
 
 const appRouters = [
     {
