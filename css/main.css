@@ -26,11 +26,28 @@ body{
     background-color: #D52941; */
     background-color: #990D35;
     /* background-color: #2C1320; screem-purple */
+    text-align: center;
     font-size: 1rem;
     /* letter-spacing:0.48; */
 }
 h1,h2,h3,h4,h5,h6{
     font-weight: normal;
 }
+.app-header .logo img{
+    fill: #990D35;
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+}
+/* HELPERS */
 
+.flex{
+    display: flex;
+}
+.flex.space-between{
+justify-content: space-between;
+}
 
+.nav{
+
+}
