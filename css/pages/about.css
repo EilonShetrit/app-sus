@@ -2,8 +2,14 @@
     background-color: #D52941;
     padding: 1rem;
 }
-.info .about-aviv{
+.info .member{
     background-color: #FCD581;
     border-radius: 20px;
     padding: 1rem;
+    margin-bottom: 1rem;
+}
+.info h1{
+    font-family: comBold;
+    font-size: 1.5rem;
+    font-weight: bolder;
 }

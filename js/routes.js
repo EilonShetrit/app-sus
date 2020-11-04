@@ -1,5 +1,5 @@
 import missBooks from './apps/miss-book/miss-book.js'
-import misterEmail from './apps/mister-email/mister-email.js'
+import misterEmail from './apps/mister-email/pages/mister-email.js'
 import missKeep from './apps/miss-keep/miss-keep.js'
 import aboutUs from './pages/about.js'
 import homePage from './pages/home-page.js'
@@ -10,8 +10,11 @@ const appRouters = [
         component: missBooks
     },
     {
-        path: '/emil',
-        component: misterEmail
+        path: '/email',
+        component: misterEmail,
+        // children:[
+        //     {}
+        // ]
     },
     {
         path: '/keep',

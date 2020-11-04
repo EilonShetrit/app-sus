@@ -1,4 +1,17 @@
+/* general */
+/* BASE.CSS, FONTS.CSS, HELPERS.CSS | HEADER.CSS, FOOTER.CSS, ABOUT.CSS */
 @import './pages/about.css';
+/* @import './pages/about.css';
+@import './pages/about.css';
+@import './pages/about.css';
+@import './pages/about.css';
+@import './pages/about.css';
+@import './pages/about.css';
+@import './pages/about.css'; */
+
+/* APPS */
+/* IMPORT MAIL-MAIN KEEP-MAIN BOOKS-MAIN */
+
 @font-face {
     font-family: comReg;
     src: url(../assets/fonts/Comfortaa-Medium.ttf);
@@ -24,6 +37,7 @@ a {
 
 body {
     margin: 0;
+    line-height: 1.5;
     /* COLORS */
     /* background-color: #FFFFFF; */
     /* background-color: #FFF8E8; */
@@ -38,11 +52,14 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
-    /* font-family: comBold; */
+    
 }
 
 /* HELPERS */
-
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+}
 .flex {
     display: flex;
 }
@@ -58,37 +75,64 @@ h1, h2, h3, h4, h5, h6 {
 .flex.justify-start{
     justify-content: flex-start;
 }
+.flex.justify-center{
+    justify-content: center;
+}
+
+header {
+    background-color: #FCD581;
+}
+
 
 header.app-header nav {
-    background-color: #FCD581;
+    
+    height: 5rem;
     
 }
 .logo{
+    height: 100%;
     width: 50%;
 }
 
 .links {
     height: 100%;
     width: 50%;
-    /* justify-content: center; */
+    
     align-items: center;
+    justify-content: space-around;
 }
-.links .route-links{
+.links a.route-links{
     height: 100%;
-    margin-inline-end: 1rem;
-    /* padding-inline-end: 5px; */
-    /* padding-inline-start: 5px; */
-    /* justify-content: center; */
-    
-    
-
+    width: 100%;
 }
+
+.links .route-links:first-child{
+    border-left: 1px solid #990D35;
+}
+
 .links .route-links:not(:last-child){
+    
     border-right: 1px solid #990D35;
 }
 
+.links .route-links{
+    text-align: center;
+  
+}
+.links .route-links.router-link-exact-active{
+    background-color: #990D35;
+    color: #FFF8E8 ;
+    /* box-shadow:  inset 0 -6px #FFF8E8; */
+
+}
+.links .route-links:hover{
+    /* box-shadow:  inset 0 -6px #FFF8E8; */
+    background-color: #e95568 ;
+    transition :0.4s;
+    color: rgb(44, 44, 44);
+}
+
 .app-header .logo img {
-   
     width: 120px;
     height: 80px;
     object-fit: cover;
