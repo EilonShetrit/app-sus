@@ -1,23 +1,28 @@
+@import './pages/about.css';
 @font-face {
     font-family: comReg;
     src: url(../assets/fonts/Comfortaa-Medium.ttf);
 }
+
 @font-face {
     font-family: comBold;
     src: url(../assets/fonts/Comfortaa-Bold.ttf);
 }
 
-*{
+* {
     box-sizing: border-box;
 }
-html{
-    font-family: comReg,sans-serif;
+
+html {
+    font-family: comReg, sans-serif;
     color: rgb(50, 50, 50);
 }
-a{
+
+a {
     text-decoration: none;
 }
-body{
+
+body {
     margin: 0;
     /* COLORS */
     /* background-color: #FFFFFF; */
@@ -30,37 +35,62 @@ body{
     font-size: 1rem;
     /* letter-spacing:0.48; */
 }
-h1,h2,h3,h4,h5,h6{
+
+h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     /* font-family: comBold; */
 }
-.info{
-    background-color: #D52941;
-    padding: 1rem;
+
+/* HELPERS */
+
+.flex {
+    display: flex;
 }
-.info .about-aviv{
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.justify-start{
+    justify-content: flex-start;
+}
+
+header.app-header nav {
     background-color: #FCD581;
-    border-radius: 20px;
-    padding: 1rem;
+    
 }
-.info h1{
+.logo{
+    width: 50%;
+}
+
+.links {
+    height: 100%;
+    width: 50%;
+    /* justify-content: center; */
+    align-items: center;
+}
+.links .route-links{
+    height: 100%;
+    margin-inline-end: 1rem;
+    /* padding-inline-end: 5px; */
+    /* padding-inline-start: 5px; */
+    /* justify-content: center; */
+    
+    
 
 }
-.app-header .logo img{
-    fill: #990D35;
+.links .route-links:not(:last-child){
+    border-right: 1px solid #990D35;
+}
+
+.app-header .logo img {
+   
     width: 120px;
     height: 80px;
     object-fit: cover;
 }
-/* HELPERS */
 
-.flex{
-    display: flex;
-}
-.flex.space-between{
-justify-content: space-between;
-}
-
-.nav{
-
-}
