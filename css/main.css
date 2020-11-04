@@ -20,10 +20,10 @@ a{
 body{
     margin: 0;
     /* COLORS */
-    /* background-color: #FFFFFF;
-    background-color: #FFF8E8;
-    background-color: #FCD581;
-    background-color: #D52941; */
+    /* background-color: #FFFFFF; */
+    /* background-color: #FFF8E8; */
+    /* background-color: #FCD581; */
+    /* background-color: #D52941; */
     background-color: #990D35;
     /* background-color: #2C1320; screem-purple */
     font-size: 1rem;
@@ -31,6 +31,19 @@ body{
 }
 h1,h2,h3,h4,h5,h6{
     font-weight: normal;
+    /* font-family: comBold; */
+}
+.info{
+    background-color: #D52941;
+    padding: 1rem;
+}
+.info .about-aviv{
+    background-color: #FCD581;
+    border-radius: 20px;
+    padding: 1rem;
+}
+.info h1{
+
 }
 
 
