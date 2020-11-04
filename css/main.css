@@ -14,7 +14,9 @@ html{
     font-family: comReg,sans-serif;
     color: rgb(50, 50, 50);
 }
-
+a{
+    text-decoration: none;
+}
 body{
     margin: 0;
     /* COLORS */
@@ -24,7 +26,6 @@ body{
     background-color: #D52941; */
     background-color: #990D35;
     /* background-color: #2C1320; screem-purple */
-    text-align: center;
     font-size: 1rem;
     /* letter-spacing:0.48; */
 }
