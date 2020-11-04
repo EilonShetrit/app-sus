@@ -11,10 +11,7 @@ const appRouters = [
     },
     {
         path: '/email',
-        component: misterEmail,
-        // children:[
-        //     {}
-        // ]
+        component: misterEmail
     },
     {
         path: '/keep',
