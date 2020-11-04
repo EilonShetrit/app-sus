@@ -1,0 +1,7 @@
+/* main-mister-email */
+
+.email-nav {
+    /* display: ; */
+    flex-direction: column;
+    background-color: #fff;
+}

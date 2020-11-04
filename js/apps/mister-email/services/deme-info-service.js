@@ -1,3 +1,5 @@
+
+import {appSusService} from '../../../services/util-service.js'
 export const demeInfoService = {
     createMails
 }
@@ -15,9 +17,11 @@ function createMails(){
 
 function _createMail(val){
     return {
+        from:'aviv',
         subject :`wassap? ${val}`,
         body:'pic UP!',
         isRread:false,
-        sentAt :Date.now()
+        sentAt :new Date,
+        id :appSusService.makeId()
     }
 }

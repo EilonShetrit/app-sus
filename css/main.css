@@ -1,6 +1,7 @@
 /* general */
 /* BASE.CSS, FONTS.CSS, HELPERS.CSS | HEADER.CSS, FOOTER.CSS, ABOUT.CSS */
 @import './pages/about.css';
+@import './apps/mister-email/main-email.css';
 /* @import './pages/about.css';
 @import './pages/about.css';
 @import './pages/about.css';
@@ -78,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 .flex.justify-center{
     justify-content: center;
 }
+
 
 header {
     background-color: #FCD581;
