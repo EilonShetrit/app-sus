@@ -9,7 +9,7 @@ export default {
             <div class="links flex">
                 <router-link class="route-links flex align-center justify-center" to="/" exact>Home</router-link>
                 <router-link class="route-links flex align-center justify-center" to="/books" exact>Books</router-link>
-                <router-link class="route-links flex align-center justify-center" to="/emil" exact>Email</router-link>
+                <router-link class="route-links flex align-center justify-center" to="/email" exact>Email</router-link>
                 <router-link class="route-links flex align-center justify-center" to="/keep">Notes</router-link>
                 <router-link class="route-links flex align-center justify-center" to="/about">About Us</router-link>
             </div>
