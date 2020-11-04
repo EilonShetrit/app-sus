@@ -19,17 +19,13 @@ export default {
         return {
             emails: null
         }
-
     },
     components: {
         emailNav
     },
      created() {
         demeInfoService.createMails()
-        .then(mail=>{
-            this.emails=mail
-            console.log( this.emails)
-        })
+        .then(mail=>this.emails=mail)
     }
 
 }

@@ -2,11 +2,11 @@ export default {
     props:['email'],
     template: `
         <section>
-        <tr>
-            <td> {{sendFrom}} </td>
-            <td> {{subjectOfEmail}} - {{bodyOfEmail}} </td>
-            <td> {{sentAt}} </td>
-        </tr>
+            <tr>
+                <td> {{sendFrom}} </td>
+                <td> {{subjectOfEmail}} - {{bodyOfEmail}} </td>
+                <td> {{sentAt}} </td>
+            </tr>
         </section>
     `,
     computed: {
