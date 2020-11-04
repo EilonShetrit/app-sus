@@ -2,8 +2,10 @@
 export default {
     template: `
     <header class="app-header">
-        <nav>
-            <div class="logo"></div>
+        <nav class="nav flex space-between">
+            <div class="logo">
+                <img :src="'./assets/img/horse-logo.png'" />
+            </div>
             <div class="links">
                 <router-link to="/" exact>Home</router-link>|
                 <router-link to="/books" exact>Books</router-link>|
