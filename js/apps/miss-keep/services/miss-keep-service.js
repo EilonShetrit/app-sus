@@ -26,29 +26,26 @@ function getNoteById(noteId) {
 }
 
 
-
-
-// 4 different notes functions
-
-function noteTxt(txt) {
+function noteTxt(txt,title) {
     const note = {
         type: 'NoteText',
         id: appSusService.makeId(),
         isPinned: false,
         info: {
-            txt
+            txt,
+            title
         }
     }
     return note;
 }
 
-function noteImg(txtUrl) {
+function noteImg(url, title) {
     const note = {
         type: 'NoteImg',
         id: appSusService.makeId(),
         info: {
-            url: txtUrl,
-            title: 'Me playing Mi'
+            txt: url,
+            title
         },
         style: {
             backgroundColor: '#00d'
@@ -57,40 +54,35 @@ function noteImg(txtUrl) {
     return note
 }
 
-function noteTodos(txt) {
-    var todos = txt.split(',');
-
+function noteTodos(txt,title) {
+    const todosTxt = txt.split(',');
     const note = {
         type: 'NoteTodos',
         id: appSusService.makeId(),
         info: {
-            label: 'How was it:',
-            todos: [
-                {
-                    txt: todos[0],
-                    doneAt: null
-                },
-                {
-                    txt: todos[1],
-                    doneAt: null
-                }
-            ]
+            title,
+            todos: []
         }
     }
-    return note;
+    for(let i=0; i< todosTxt.length; i++){
+        note.info.todos[i] = {
+            txt: todosTxt[i],
+            doneAt: null
+        }
+    }
+    return note; 
 }
 
-function noteVidoe(txtUrl) {
+function noteVidoe(url,title) {
     const note = {
         type: 'NoteVideo',
         id: appSusService.makeId(),
         info: {
-            url: txtUrl,
-            title: 'Me playing Mi'
+            txt: url,
+            title
         }
     }
     return note;
 }
-
 
 

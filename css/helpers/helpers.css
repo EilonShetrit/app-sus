@@ -1,0 +1,24 @@
+
+/* HELPERS */
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.flex {
+    display: flex;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.justify-start{
+    justify-content: flex-start;
+}
+.flex.justify-center{
+    justify-content: center;
+}

@@ -1,0 +1,54 @@
+
+header {
+    background-color: #FCD581;
+}
+
+header.app-header nav {
+    
+    height: 5rem;
+    
+}
+.logo{
+    height: 100%;
+    width: 50%;
+}
+
+.links {
+    height: 100%;
+    width: 50%;
+    
+    align-items: center;
+    justify-content: space-around;
+}
+.links a.route-links{
+    height: 100%;
+    width: 100%;
+}
+
+.links .route-links{
+    border-left: 1px solid #990D35;
+}
+
+.links .route-links:last-child{
+    border-right: 1px solid #990D35;
+}
+
+.links .route-links{
+    text-align: center;
+  
+}
+.links .route-links.router-link-exact-active{
+    background-color: #990D35;
+    color: #FFF8E8 ;
+}
+.links .route-links:hover{
+    background-color: #e95568 ;
+    transition :0.4s;
+    color: rgb(44, 44, 44);
+}
+
+.app-header .logo img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+}

@@ -1,142 +1,26 @@
 /* general */
 /* BASE.CSS, FONTS.CSS, HELPERS.CSS | HEADER.CSS, FOOTER.CSS, ABOUT.CSS */
+
+@import './base/base.css';
+@import './fonts/fonts.css';
+@import './helpers/helpers.css';
+@import './header/header.css';
+/* @import './footer/footer.css'; */
 @import './pages/about.css';
 @import './apps/mister-email/main-email.css';
-/* @import './pages/about.css';
-@import './pages/about.css';
-@import './pages/about.css';
-@import './pages/about.css';
-@import './pages/about.css';
-@import './pages/about.css';
-@import './pages/about.css'; */
 
+
+
+/* ------------------------------------------ */
+/* * COLORS */ 
+/* background-color: #FFFFFF; */
+/* background-color: #FFF8E8; */
+/* background-color: #FCD581; */
+/* background-color: #D52941; */
+/* background-color: #2C1320; screem-purple */
+/* background-color: #990D35; */
+/* -------------------------------------------- */
 /* APPS */
 /* IMPORT MAIL-MAIN KEEP-MAIN BOOKS-MAIN */
 
-@font-face {
-    font-family: comReg;
-    src: url(../assets/fonts/Comfortaa-Medium.ttf);
-}
-
-@font-face {
-    font-family: comBold;
-    src: url(../assets/fonts/Comfortaa-Bold.ttf);
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    font-family: comReg, sans-serif;
-    color: rgb(50, 50, 50);
-}
-
-a {
-    text-decoration: none;
-}
-
-body {
-    margin: 0;
-    line-height: 1.5;
-    /* COLORS */
-    /* background-color: #FFFFFF; */
-    /* background-color: #FFF8E8; */
-    /* background-color: #FCD581; */
-    /* background-color: #D52941; */
-    background-color: #990D35;
-    /* background-color: #2C1320; screem-purple */
-    text-align: center;
-    font-size: 1rem;
-    /* letter-spacing:0.48; */
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
-    
-}
-
-/* HELPERS */
-.container{
-    max-width: 900px;
-    margin: 0 auto;
-}
-.flex {
-    display: flex;
-}
-
-.flex.space-between {
-    justify-content: space-between;
-}
-
-.flex.align-center {
-    align-items: center;
-}
-
-.flex.justify-start{
-    justify-content: flex-start;
-}
-.flex.justify-center{
-    justify-content: center;
-}
-
-
-header {
-    background-color: #FCD581;
-}
-
-
-header.app-header nav {
-    
-    height: 5rem;
-    
-}
-.logo{
-    height: 100%;
-    width: 50%;
-}
-
-.links {
-    height: 100%;
-    width: 50%;
-    
-    align-items: center;
-    justify-content: space-around;
-}
-.links a.route-links{
-    height: 100%;
-    width: 100%;
-}
-
-.links .route-links:first-child{
-    border-left: 1px solid #990D35;
-}
-
-.links .route-links:not(:last-child){
-    
-    border-right: 1px solid #990D35;
-}
-
-.links .route-links{
-    text-align: center;
-  
-}
-.links .route-links.router-link-exact-active{
-    background-color: #990D35;
-    color: #FFF8E8 ;
-    /* box-shadow:  inset 0 -6px #FFF8E8; */
-
-}
-.links .route-links:hover{
-    /* box-shadow:  inset 0 -6px #FFF8E8; */
-    background-color: #e95568 ;
-    transition :0.4s;
-    color: rgb(44, 44, 44);
-}
-
-.app-header .logo img {
-    width: 120px;
-    height: 80px;
-    object-fit: cover;
-}
 
