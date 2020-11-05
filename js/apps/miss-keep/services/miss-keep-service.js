@@ -2,50 +2,57 @@ import { appSusService } from '../../../services/util-service.js'
 
 export const missKeepService = {
     getNotes,
-    getNoteById
+    getNoteById,
+    createNotes,
+    createNoteText,
+    createNoteImg,
+    createNoteTodos,
+    createNoteVideo
 }
 
 //--MODEL--//
+const gNotes =  [];
 
 function getNotes() {
-    return createNotes();
+    return Promise.resolve(gNotes)
 }
-
+createNotes()
 function createNotes() {
-    const notes = []
-    notes.push(noteTxt('Audu Mea'));
-    notes.push(noteImg('FiakIbasa'));
-    notes.push(noteTodos('Subali,Pesha'));
-    notes.push(noteVidoe('MitsuBashi'));
-    return Promise.resolve(notes);
+    gNotes.push(createNoteText('Audu Mea'));
+    gNotes.push(createNoteImg('Fiak Ibasa'));
+    gNotes.push(createNoteTodos('Subali,Pesha'));
+    gNotes.push(createNoteVideo('https://www.youtube.com/watch?v=oXx2TczveMI'));
 }
 
 function getNoteById(noteId) {
-    const note = notes.find(note => note.id === noteId)
+    const note = gNotes.find(note => note.id === noteId)
     return Promise.resolve(note)
 }
 
-
-function noteTxt(txt,title) {
+function createNoteText(txt) {
     const note = {
-        type: 'NoteText',
+        type: 'note-text',
         id: appSusService.makeId(),
         isPinned: false,
         info: {
             txt,
-            title
+            title: null
+        },
+        style: {
+            backgroundColor: "#00d" 
         }
     }
     return note;
 }
 
-function noteImg(url, title) {
+function createNoteImg(url) {
     const note = {
-        type: 'NoteImg',
+        type: 'note-img',
         id: appSusService.makeId(),
         info: {
             txt: url,
-            title
+            title: null
+
         },
         style: {
             backgroundColor: '#00d'
@@ -54,14 +61,17 @@ function noteImg(url, title) {
     return note
 }
 
-function noteTodos(txt,title) {
+function createNoteTodos(txt) {
     const todosTxt = txt.split(',');
     const note = {
-        type: 'NoteTodos',
+        type: 'note-todos',
         id: appSusService.makeId(),
         info: {
-            title,
-            todos: []
+            todos: [],
+            title: null
+        },
+        style: {
+            backgroundColor: "#00d" 
         }
     }
     for(let i=0; i< todosTxt.length; i++){
@@ -73,13 +83,16 @@ function noteTodos(txt,title) {
     return note; 
 }
 
-function noteVidoe(url,title) {
+function createNoteVideo(url) {
     const note = {
-        type: 'NoteVideo',
+        type: 'note-video',
         id: appSusService.makeId(),
         info: {
             txt: url,
-            title
+            title: null
+        },
+        style: {
+            backgroundColor: "#00d" 
         }
     }
     return note;
