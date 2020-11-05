@@ -1,0 +1,11 @@
+table td {
+    border-right: 1px solid black;
+    /* font-family:  comReg; */
+}
+table td:hover{
+    cursor: pointer;
+}
+.unread {
+    font-family:  comBold;
+    background-color: #fff;
+}

@@ -4,7 +4,8 @@ import missKeep from './apps/miss-keep/pages/miss-keep.js'
 import aboutUs from './pages/about.js'
 import homePage from './pages/home-page.js'
 import emailList from './apps/mister-email/cmps/email-list.js'
-
+import emailCompose from './apps/mister-email/cmps/email-compose.js'
+// import emailDetails from './apps/mister-email/cmps/email-details.js'
 const appRouters = [
     {
         path: '/books',
@@ -17,11 +18,20 @@ const appRouters = [
             {
                 path :'inbox',
                 component:emailList
+            },
+            {
+                path :'compose',
+                component:emailCompose
+                
             }
+            // {
+            //     path: 'details',
+            //     component: emailDetails
+            // }
 
         ]
 
-    },
+    },   
     {
         path: '/keep',
         component: missKeep

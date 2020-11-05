@@ -1,14 +1,32 @@
+import emailDetails from './email-details.js'
 export default {
     props:['email'],
     template: `
         <section>
-            <tr>
-                <td> {{sendFrom}} </td>
-                <td> {{subjectOfEmail}} - {{bodyOfEmail}} </td>
-                <td> {{sentAt}} </td>
-            </tr>
+            <section @click="read" v-show="!isDetailsShown">
+                    <td :class="{unread: !isRead}"> {{sendFrom}} </td>
+                    <td :class="{unread: !isRead}"> {{subjectOfEmail}} - {{bodyOfEmail}} </td>
+                    <td :class="{unread: !isRead}"> {{sentAt}} </td>
+            </section>
+            <section  v-show="isDetailsShown">
+                <email-details @click.native="read" :email="emailCopy"/>
+            </section>
         </section>
-    `,
+    `,data(){
+        return {
+            emailCopy: null,
+            isRead:this.isReaded,
+            isDetailsShown: false
+          }
+    },
+    methods:{
+        read(){
+           this.isRead=true
+           this.emailCopy.isRead=true
+           this.isDetailsShown=!this.isDetailsShown
+        //    this.$router.push('/email/inbox/details')
+        }
+    },
     computed: {
         sendFrom(){
             return this.email.from
@@ -20,10 +38,21 @@ export default {
             return this.email.body
         },
         sentAt(){
-            return this.email.sentAt.toLocaleDateString()
-
+           
+            return this.email.sentAt
+        },
+      
+        isReaded(){
+            return this.emailCopy.isRead
         }
+    },
+    created(){
+        this.emailCopy=JSON.parse(JSON.stringify(this.email))
+        
+    },components:{
+        emailDetails
     }
+    
         
     
 }
