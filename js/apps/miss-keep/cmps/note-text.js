@@ -1,20 +1,16 @@
 
+
 export default {
     props:['note'],
     template: `
-        <section class="note-todos">
-            <ul>
-                <li v-for="todo in todos">
-                    {{todo.txt}}
-                </li>
-            </ul>
-
+        <section class="note-text">
+            <h2>{{txt}}</h2>
             <input type="color" v-model="backgroundColor">
         </section>
     `,
     data(){
         return{
-            todos: this.note.info.todos,
+            txt: this.note.info.txt,
             backgroundColor: "#ffffff"
 
         }
