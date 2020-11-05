@@ -1,5 +1,5 @@
 /* main-mister-email */
-
+@import './cmps/email-preview.css';
 .email-nav {
     /* display: ; */
     flex-direction: column;

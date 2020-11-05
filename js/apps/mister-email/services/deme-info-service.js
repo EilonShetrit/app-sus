@@ -20,7 +20,7 @@ function _createMail(val){
         from:'aviv',
         subject :`wassap? ${val}`,
         body:'pic UP!',
-        isRread:false,
+        isRead:false,
         sentAt :new Date,
         id :appSusService.makeId()
     }
