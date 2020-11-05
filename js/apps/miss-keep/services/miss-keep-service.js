@@ -2,26 +2,28 @@ import { appSusService } from '../../../services/util-service.js'
 
 export const missKeepService = {
     getNotes,
+    remove,
     getNoteById,
     createNotes,
     createNoteText,
     createNoteImg,
     createNoteTodos,
-    createNoteVideo
+    createNoteVideo,
+    
 }
 
 //--MODEL--//
-const gNotes =  [];
+const gNotes = [];
 
 function getNotes() {
     return Promise.resolve(gNotes)
 }
 createNotes()
 function createNotes() {
-    gNotes.push(createNoteText('Audu Mea'));
-    gNotes.push(createNoteImg('Fiak Ibasa'));
-    gNotes.push(createNoteTodos('Subali,Pesha'));
-    gNotes.push(createNoteVideo('https://www.youtube.com/watch?v=oXx2TczveMI'));
+    createNoteText('Audu Mea');
+    createNoteImg('Fiak Ibasa');
+    createNoteTodos('Subali,Pesha');
+    createNoteVideo('https://www.youtube.com/watch?v=oXx2TczveMI');
 }
 
 function getNoteById(noteId) {
@@ -39,10 +41,10 @@ function createNoteText(txt) {
             title: null
         },
         style: {
-            backgroundColor: "#00d" 
+            backgroundColor: "#00d"
         }
     }
-    return note;
+    gNotes.push(note)
 }
 
 function createNoteImg(url) {
@@ -58,7 +60,7 @@ function createNoteImg(url) {
             backgroundColor: '#00d'
         }
     }
-    return note
+    gNotes.push(note)
 }
 
 function createNoteTodos(txt) {
@@ -71,16 +73,16 @@ function createNoteTodos(txt) {
             title: null
         },
         style: {
-            backgroundColor: "#00d" 
+            backgroundColor: "#00d"
         }
     }
-    for(let i=0; i< todosTxt.length; i++){
+    for (let i = 0; i < todosTxt.length; i++) {
         note.info.todos[i] = {
             txt: todosTxt[i],
             doneAt: null
         }
     }
-    return note; 
+    gNotes.push(note)
 }
 
 function createNoteVideo(url) {
@@ -92,10 +94,18 @@ function createNoteVideo(url) {
             title: null
         },
         style: {
-            backgroundColor: "#00d" 
+            backgroundColor: "#00d"
         }
     }
-    return note;
+    gNotes.push(note)
 }
 
-
+function remove(noteId) {
+    const idx = gNotes.findIndex(note => note.id === noteId);
+    gNotes.splice(idx, 1);
+    return Promise.resolve()
+}
+// function edit(noteId) {
+//     const note = gNotes.findIndex(note => note.id === noteId);
+    
+// }

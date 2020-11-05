@@ -5,7 +5,7 @@ export default {
             <section class="video-play">
                 <iframe src="url"></iframe>
             </section>
-            <input type="color" v-model="backgroundColor">
+            <input type="color" v-model="backgroundColor" >
         </section>
     `,
     data(){
@@ -22,3 +22,4 @@ export default {
 
     }
 }
+// :backgroundColor="backgroundColor"
