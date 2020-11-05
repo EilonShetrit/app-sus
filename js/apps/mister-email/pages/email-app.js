@@ -1,6 +1,6 @@
 
 import {demeInfoService} from '../services/deme-info-service.js'
-
+import {appSusService} from '../../../services/util-service.js'
 
 import emailNav from '../cmps/email-nav.js'
 
@@ -23,9 +23,15 @@ export default {
     components: {
         emailNav
     },
-     created() {
+    created() {
+       var sents= appSusService.loadFromStorage('sentEmailDB')
+       if (!sents){
+        appSusService.saveToStorage('sentEmailDB',[])
+       }
         demeInfoService.createMails()
         .then(mail=>this.emails=mail)
+
+        
     }
 
 }

@@ -1,22 +1,30 @@
-import emailSentPreview from './email-sent-preview.js'
-
+import {appSusService} from '../../../services/util-service.js'
+// import emailSentPreview from './email-sent-preview.js'
+import emailPreview from './email-preview.js'
 export default {
-    // props:['emails'],
     template: `
         <section>
-            <h1> hiii</h1>
-            <email-sent-preview/>
-            <!-- <table v-show="emails" > -->
-                <!-- <tr v-for="email in emails" :key="email.id"> -->
-                    <!-- <email-preview :email="email" > </email-preview> -->
-                    <!-- <email-details v-if="clicked"></email-details> -->
-                <!-- </tr> -->
-            <!-- </table>  -->
+        
+            <table v-show="sentsEmails" >
+                <tr v-for="email in sentsEmails" :key="email.id">
+                      <!-- <email-sent-preview :email="email" > </email-sent-preview> -->
+                      <email-preview :email="email"/>
+                </tr>
+            </table> 
            
         </section>
-    `,
+    `,data(){
+        return {
+            sentsEmails:null
+
+        }
+    },
      components:{
-        emailSentPreview
+        emailPreview
+        // emailSentPreview
         
+    },
+    created() {
+       this.sentsEmails= appSusService.loadFromStorage('sentEmailDB')
     }
 }
