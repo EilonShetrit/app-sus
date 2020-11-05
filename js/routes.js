@@ -5,6 +5,8 @@ import aboutUs from './pages/about.js'
 import homePage from './pages/home-page.js'
 import emailList from './apps/mister-email/cmps/email-list.js'
 import emailCompose from './apps/mister-email/cmps/email-compose.js'
+import emailSentList from './apps/mister-email/cmps/email-sent-list.js'
+
 // import emailDetails from './apps/mister-email/cmps/email-details.js'
 const appRouters = [
     {
@@ -22,6 +24,11 @@ const appRouters = [
             {
                 path :'compose',
                 component:emailCompose
+                
+            },
+            {
+                path :'sent',
+                component:emailSentList
                 
             }
             // {
