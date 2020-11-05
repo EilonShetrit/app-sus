@@ -12,7 +12,6 @@ export default {
         return{
             txt: this.note.info.txt,
             backgroundColor: "#ffffff"
-
         }
     },
     methods: {

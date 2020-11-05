@@ -1,4 +1,4 @@
-import { missKeepService } from '../services/miss-keep-service.js'
+
 import noteText from '../cmps/note-text.js'
 import noteImg from '../cmps/note-img.js'
 import noteTodos from '../cmps/note-todos.js'
@@ -14,15 +14,24 @@ export default {
                 <component :is="note.type"
                            :note="note">
                 </component> 
+                <button @click="emitRemove(note.id)">delete</button>
+                <button @click="emitEdit(note.id)">edit</button>
             </li>   
         </ul>     
     </section>
     `,
-    data() {
-        return {
-        }
-    },
+    // data() {
+        
+    // },
     methods: {
+        emitRemove(noteId){
+            console.log('removing', noteId);
+            this.$emit('remove', noteId);
+        },
+        emitEdit(noteId){
+            console.log('editing', noteId);
+            this.$emit('edit', noteId);
+        },
     },
     computed: {
     },
