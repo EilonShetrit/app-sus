@@ -21,7 +21,9 @@ function _createMail(val){
         subject :`wassap? ${val}`,
         body:'pic UP!',
         isRead:false,
-        sentAt :new Date,
+        email: '<email>',
+        sentAt :(new Date().toLocaleDateString()),
+        // sentAt :new Date,
         id :appSusService.makeId()
     }
 }

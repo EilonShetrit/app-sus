@@ -22,3 +22,12 @@
 .flex.justify-center{
     justify-content: center;
 }
+.flex-c{
+    display: flex;
+    flex-direction: column;
+}
+.flex-c.justify-start{
+    justify-content: flex-start;
+}
+
+
