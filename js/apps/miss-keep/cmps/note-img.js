@@ -1,23 +1,33 @@
+import noteEdit from './note-edit.js'
 
 export default {
     props:['note'],
     template: `
         <section class="note-img">
+            <h2>{{title}}</h2>
             <img :src="url">
-            <input type="color" v-model="backgroundColor">
+            <note-edit @remove-note="removeNote" @update-note="updateNote" :note="note"/>
         </section>
     `,
     data(){
         return{
             url: this.note.info.txt,
-            backgroundColor: "#ffffff"
-
+            title: this.note.info.title,
         }
     },
     methods: {
+        removeNote(noteId) {
+            this.$emit('remove-note', noteId)
+        },
+        updateNote(note) {
+            this.$emit('update-note', note)
+        }
      
     },
     created(){
 
+    },
+    components:{
+        noteEdit
     }
 }

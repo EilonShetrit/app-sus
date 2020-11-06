@@ -1,8 +1,9 @@
-
+import { eventBus , EVENT_SHOW_MSG } from '../../../services/event-bus-service.js'
 import noteText from '../cmps/note-text.js'
 import noteImg from '../cmps/note-img.js'
 import noteTodos from '../cmps/note-todos.js'
 import noteVideo from '../cmps/note-video.js'
+
 
 
 export default {
@@ -12,9 +13,10 @@ export default {
         <ul>
             <li v-for="note in notes" :key="note.id">
                 <component :is="note.type"
-                           :note="note">
+                           :note="note"
+                            @remove-note="removeNote"
+                            @update-note="updateNote">
                 </component> 
-                <button @click="emitRemove(note.id)">delete</button>
             </li>   
         </ul>     
     </section>
@@ -23,14 +25,12 @@ export default {
         
     // },
     methods: {
-        emitRemove(noteId){
-            console.log('removing', noteId);
-            this.$emit('remove', noteId);
+        removeNote(noteId) {
+            this.$emit('remove-note', noteId)
         },
-        emitEdit(noteId){
-            console.log('editing', noteId);
-            this.$emit('edit', noteId);
-        },
+        updateNote(note) {
+            this.$emit('update-note', note)
+        }
     },
     computed: {
     },
@@ -40,6 +40,6 @@ export default {
         noteText,
         noteImg,
         noteTodos,
-        noteVideo
+        noteVideo,
     }
 }

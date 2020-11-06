@@ -3,6 +3,7 @@ import { appSusService } from '../../../services/util-service.js'
 export const missKeepService = {
     getNotes,
     remove,
+    update,
     getNoteById,
     createNotes,
     createNoteText,
@@ -20,10 +21,10 @@ function getNotes() {
 }
 createNotes()
 function createNotes() {
-    createNoteText('Audu Mea');
-    createNoteImg('https://www.photo-art.co.il/wp-content/uploads/2015/07/BY1A5781.jpg');
-    createNoteTodos('Subali,Pesha');
-    createNoteVideo('https://www.youtube.com/v/a12Qfcci9Ro');
+    createNoteText('Audu Mea', 'My new car');
+    createNoteImg('https://www.photo-art.co.il/wp-content/uploads/2015/07/BY1A5781.jpg', 'Desktop picture');
+    createNoteTodos('Buy PS5, Clean the house', 'Todo things');
+    createNoteVideo('https://www.youtube.com/v/a12Qfcci9Ro', 'Watch later');
 }
 
 function getNoteById(noteId) {
@@ -31,14 +32,14 @@ function getNoteById(noteId) {
     return Promise.resolve(note)
 }
 
-function createNoteText(txt) {
+function createNoteText(txt,title) {
     const note = {
         type: 'note-text',
         id: appSusService.makeId(),
         isPinned: false,
         info: {
             txt,
-            title: null
+            title
         },
         style: {
             backgroundColor: "#00d"
@@ -47,13 +48,14 @@ function createNoteText(txt) {
     gNotes.push(note)
 }
 
-function createNoteImg(url) {
+function createNoteImg(url,title) {
     const note = {
         type: 'note-img',
         id: appSusService.makeId(),
+        isPinned: false,
         info: {
             txt: url,
-            title: null
+            title
 
         },
         style: {
@@ -63,14 +65,15 @@ function createNoteImg(url) {
     gNotes.push(note)
 }
 
-function createNoteTodos(txt) {
+function createNoteTodos(txt,title) {
     const todosTxt = txt.split(',');
     const note = {
         type: 'note-todos',
         id: appSusService.makeId(),
+        isPinned: false,
         info: {
-            todos: [],
-            title: null
+            title,
+            todos: []
         },
         style: {
             backgroundColor: "#00d"
@@ -85,13 +88,14 @@ function createNoteTodos(txt) {
     gNotes.push(note)
 }
 
-function createNoteVideo(url) {
+function createNoteVideo(url,title) {
     const note = {
         type: 'note-video',
         id: appSusService.makeId(),
+        isPinned: false,
         info: {
             txt: url,
-            title: null
+            title
         },
         style: {
             backgroundColor: "#00d"
@@ -103,9 +107,10 @@ function createNoteVideo(url) {
 function remove(noteId) {
     const idx = gNotes.findIndex(note => note.id === noteId);
     gNotes.splice(idx, 1);
-    return Promise.resolve()
+    return Promise.resolve(gNotes)
 }
-// function edit(noteId) {
-//     const note = gNotes.findIndex(note => note.id === noteId);
-    
-// }
+function update(note) {
+    const idx = gNotes.findIndex(currNote => currNote.id === note.id);
+    gNotes.splice(idx, 1, note);
+    return Promise.resolve(gNotes)
+}

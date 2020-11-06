@@ -1,0 +1,22 @@
+@import '../miss-keep/cmps/note-color.css';
+
+.note-edit {
+    padding: 1rem;
+    align-self: flex-end;
+}
+.note-edit svg {
+    fill: #ffffff;
+    width: 30px;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+}
+
+.note-edit svg:hover {
+    transform: scale(1.05);
+    background-color: rgba(189, 189, 189, 0.438);
+    border-radius: 20%;
+}
+
+.note-edit svg.pinned{
+    fill: rgb(24, 24, 24);
+}
