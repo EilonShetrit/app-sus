@@ -7,6 +7,7 @@
 @import './header/header.css';
 /* @import './footer/footer.css'; */
 @import './pages/about.css';
+@import './pages/home-page.css';
 @import './apps/mister-email/main-email.css';
 @import './apps/miss-keep/main-keep.css';
 

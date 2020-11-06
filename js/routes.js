@@ -35,7 +35,6 @@ const appRouters = [
             //     path: 'details',
             //     component: emailDetails
             // }
-
         ]
 
     },   

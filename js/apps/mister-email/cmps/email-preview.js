@@ -29,7 +29,8 @@ export default {
     },
     computed: {
         sendFrom(){
-            return this.email.from
+            if (!this.email.from) return this.email.to
+            else return this.email.from
         },
         subjectOfEmail(){
             return this.email.subject
@@ -49,7 +50,8 @@ export default {
     created(){
         this.emailCopy=JSON.parse(JSON.stringify(this.email))
         
-    },components:{
+    },
+    components:{
         emailDetails
     }
     

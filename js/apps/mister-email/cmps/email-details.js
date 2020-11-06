@@ -7,7 +7,7 @@ export default {
                 <button class="detail-btn" @click="deletingEmail"><i class="fas fa-trash"></i></button>
            </div>
            <div class="detail-sender flex justify-start">
-           <p class="detail-sender-name"> {{email.from}} </p>
+           <p class="detail-sender-name"> {{sendFrom}} </p>
            <p>  {{email.email}} </p>
            <p> {{email.sentAt}} </p>
            </div>
@@ -31,6 +31,10 @@ export default {
         }
     },
     computed: {
+        sendFrom(){
+            if (!this.email.from) return this.email.to
+            else return this.email.from
+        }
      
     }
 
