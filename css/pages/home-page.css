@@ -1,0 +1,11 @@
+.home-page{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    background: url("../../assets/img/home-page-iron-3.jpg") no-repeat fixed;  
+    
+    background-size: cover;
+ 
+}

@@ -6,6 +6,7 @@
 html {
     font-family: comReg, sans-serif;
     color: rgb(50, 50, 50);
+   
 }
 
 a {
@@ -13,11 +14,14 @@ a {
 }
 
 body {
+    /* height: 100vh;
+    width: 100vw; */
     margin: 0;
     line-height: 1.5;
     background-color: #990D35;
     text-align: center;
     font-size: 1rem;
+    /* background-image: url('../../assets/img/home-page-iron-3.jpg'); */
     /* letter-spacing:0.48; */
 }
 

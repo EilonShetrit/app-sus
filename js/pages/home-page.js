@@ -1,6 +1,6 @@
 export default {
     template: `
-    <section>
+    <section class="home-page">
         <h1>home sweet home..</h1>       
     </section>
     `
