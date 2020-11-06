@@ -8,7 +8,7 @@ export default {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptate, blanditiis deserunt voluptatibus, perspiciatis perferendis dicta labore pariatur ad odio laudantium ipsam maxime. Alias, amet porro! Magni, voluptas voluptate. Quas?</p>
             </section>
             <section class="member">
-                <h1>Eilon Shetirit</h1> 
+                <h1>Eilon Shetrit</h1> 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptate, blanditiis deserunt voluptatibus, perspiciatis perferendis dicta labore pariatur ad odio laudantium ipsam maxime. Alias, amet porro! Magni, voluptas voluptate. Quas?</p>
             </section>
         </section>      
