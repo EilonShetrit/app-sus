@@ -3,7 +3,7 @@ export default {
     template: `
         <section class="note-video">
             <section class="video-play">
-                <iframe src="url"></iframe>
+                <embed :src="url"/>
             </section>
             <input type="color" v-model="backgroundColor" >
         </section>

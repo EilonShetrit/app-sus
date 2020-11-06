@@ -21,9 +21,9 @@ function getNotes() {
 createNotes()
 function createNotes() {
     createNoteText('Audu Mea');
-    createNoteImg('Fiak Ibasa');
+    createNoteImg('https://www.photo-art.co.il/wp-content/uploads/2015/07/BY1A5781.jpg');
     createNoteTodos('Subali,Pesha');
-    createNoteVideo('https://www.youtube.com/watch?v=oXx2TczveMI');
+    createNoteVideo('https://www.youtube.com/v/a12Qfcci9Ro');
 }
 
 function getNoteById(noteId) {

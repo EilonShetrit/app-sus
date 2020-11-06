@@ -15,7 +15,6 @@ export default {
                            :note="note">
                 </component> 
                 <button @click="emitRemove(note.id)">delete</button>
-                <button @click="emitEdit(note.id)">edit</button>
             </li>   
         </ul>     
     </section>
