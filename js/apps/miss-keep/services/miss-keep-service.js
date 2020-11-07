@@ -53,7 +53,7 @@ function createNoteText(txt, title) {
             title
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: "#FCD581"
         }
     }
     return note;
@@ -70,7 +70,7 @@ function createNoteImg(url, title) {
 
         },
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: '#FCD581'
         }
     }
     return note;
@@ -89,7 +89,7 @@ function createNoteTodos(txt, title) {
             todos: []
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: "#FCD581"
         }
     }
     for (let i = 0; i < todosTxt.length; i++) {
@@ -114,7 +114,7 @@ function createNoteVideo(url, title) {
             title
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: "#FCD581"
         }
     }
     return note;

@@ -9,7 +9,7 @@ import noteVideo from '../cmps/note-video.js'
 export default {
     props:['notes'],
     template: `
-    <section class="notes-list flex space-between">
+    <section class="notes-list flex space-around">
             <section class="note-container " v-for="note in notes" :key="note.id">
                 <component  
                             :is="note.type"

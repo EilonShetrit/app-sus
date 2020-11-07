@@ -3,7 +3,7 @@ import noteEdit from './note-edit.js'
 export default {
     props:['note'],
     template: `
-        <section class="note-text">
+        <section class="note-text" :style="{backgroundColor: note.style.backgroundColor}">
         <h2  class="img-title" contenteditable v-text="title" @blur="updateTitle"></h2> 
         <h1  class="img-title" contenteditable v-text="txt" @blur="updateText"></h1> 
             <note-edit @remove-note="removeNote" @update-note="updateNote" @copy-note="copyNote" :note="note"/>

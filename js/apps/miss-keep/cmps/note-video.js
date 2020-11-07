@@ -3,7 +3,7 @@ import noteEdit from './note-edit.js'
 export default {
     props: ['note'],
     template: `
-        <section :title="direction" class="note-video">
+        <section :title="direction" class="note-video" :style="{backgroundColor: note.style.backgroundColor}">
         <h2  class="img-title" contenteditable v-text="title" @blur="updateTitle"></h2> 
             <section class="video-play">
                 <iframe :src="fixedUrl"></iframe>

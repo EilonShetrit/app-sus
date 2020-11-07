@@ -1,8 +1,7 @@
-/* @import '../miss-keep/cmps/note-text.css'; */
-
+@import '../miss-keep/cmps/note-text.css';
 @import '../miss-keep/cmps/note-img.css';
 @import '../miss-keep/cmps/note-todos.css';
-/* @import '../miss-keep/cmps/note-video.css'; */
+@import '../miss-keep/cmps/note-video.css';
 
 @import '../miss-keep/cmps/note-list.css';
 @import '../miss-keep/cmps/note-edit.css';
@@ -12,16 +11,13 @@
     height: 35px;
     font-size: 1rem;
     text-align: center;
+    margin-top: 10px;
 }
 
 .note-filter input:focus {
     box-shadow: 0px 0px 10px 3px #FFFFFF;
     background-color: #FFF8E8;
 }
-
-/* .clean-input{
-
-} */
 
 .input-title {
     height: 35px;
@@ -52,7 +48,6 @@
 }
 .add-new-note-input input, .add-new-note button{
     background-color: rgba(255, 255, 255, 0);
-   /* opacity: 0; */
     outline: none;
 }
 

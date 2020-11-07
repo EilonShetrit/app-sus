@@ -4,10 +4,7 @@ header {
 }
 
 header.app-header nav {
-    
-    height: 5rem;
-    margin-bottom: 10px;
-    
+    height: 5rem; 
 }
 .logo{
     height: 100%;

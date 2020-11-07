@@ -4,3 +4,7 @@
     height: 220px;
     object-fit: cover;
 }
+.note-img{
+    padding: 10px;
+    border-radius: 10px;
+}

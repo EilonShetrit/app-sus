@@ -6,12 +6,13 @@
 .note-color-container .note-colors {
     position: absolute;
     bottom: 3.25rem;
+    right: 5px;
     display: grid;
     grid-template-columns: repeat(4, 25%);
     visibility: hidden;
     opacity: 0;
     transition: 150ms ease-in-out;
-    background-color: #e7e7e7ee;
+    background-color: rgb(50, 50, 50);
     border-radius: 5px;
     padding: 0.05rem 0.3rem;
 }

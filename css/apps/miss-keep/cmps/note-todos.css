@@ -1,4 +1,8 @@
+.note-todos{
+    padding: 10px;
+    border-radius: 10px;
+}
 .note-todos svg{
-    fill: white;
+    fill: rgb(50, 50, 50);
     cursor: pointer;
 }

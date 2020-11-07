@@ -3,7 +3,7 @@ import { timeToShow } from '../../mister-email/services/time-to-shoe-service.js'
 export default {
     props: ['note'],
     template: `
-        <section class="note-todos">
+        <section class="note-todos" :style="{backgroundColor: note.style.backgroundColor}">
         <h2  class="img-title" contenteditable v-text="title" @blur="updateTitle"></h2>
             <ul>
                 <li v-for="(todo,idx) in todos">
