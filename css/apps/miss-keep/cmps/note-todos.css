@@ -6,3 +6,9 @@
     fill: rgb(50, 50, 50);
     cursor: pointer;
 }
+.line{
+    text-decoration: line-through;
+}
+.done-at{
+color: red;
+}
