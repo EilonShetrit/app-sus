@@ -4,7 +4,7 @@ export default {
     props:['note'],
     template: `
         <section class="note-img">
-            <h2  class="img-title" contenteditable v-text="title"></h2> 
+            <h2  class="img-title" contenteditable v-text="title" @blur="updateTitle"></h2> 
             <img :src="url">
             <note-edit @remove-note="removeNote" @update-note="updateNote"  @copy-note="copyNote" :note="note"/>
         </section>
@@ -24,6 +24,10 @@ export default {
         },
         copyNote(note){
             this.$emit('copy-note', note) 
+        },
+        updateTitle(ev) {
+            this.note.info.title = ev.target.innerText
+            this.updateNote(this.note)
         }
     },
     created(){

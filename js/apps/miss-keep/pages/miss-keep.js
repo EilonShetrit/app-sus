@@ -16,7 +16,7 @@ export default {
             <button @click.stop="setNoteVideo"><img src="../../assets/icons/video.png"/></button>
             <button @click.stop="setNoteTodos"><img src="../../assets/icons/list.png"/></button>
         </section>
-            <note-list :notes="notesToShow" @remove-note="removeNote" @update-note="updateNote" @copy-note="copyNote"/>      
+            <note-list v-if="notes.length > 0" :notes="notesToShow" @remove-note="removeNote" @update-note="updateNote" @copy-note="copyNote"/>      
     </section>
     `,
     data() {
@@ -78,8 +78,9 @@ export default {
                 .then(notes => this.notes = notes);
         },
         updateNote(note) {
+            console.log('miss keep', note);
             missKeepService.update(note)
-                .then(notes => this.notes = notes);
+                .then(notes => this.notes = notes)
         },
         copyNote(note) {
             missKeepService.copy(note)

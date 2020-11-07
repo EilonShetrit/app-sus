@@ -77,9 +77,11 @@ function createNoteImg(url, title) {
 }
 
 function createNoteTodos(txt, title) {
+    let originalTxt = txt;
     const todosTxt = txt.split(',');
     const note = {
         type: 'note-todos',
+        fullTxt: originalTxt,
         id: appSusService.makeId(),
         isPinned: false,
         info: {
@@ -124,14 +126,15 @@ function remove(noteId) {
 }
 function update(note) {
     let currNote = JSON.parse(JSON.stringify(note))
-    const idx = notes.findIndex(note => note.id === currNote.id);
-    notes.splice(idx, 1, currNote);
-    appSusService.saveToStorage(NOTE_DB, notes);
-    return Promise.resolve(notes)
+    const idx = gNotes.findIndex(note => note.id === currNote.id);
+    gNotes.splice(idx, 1, currNote);
+    appSusService.saveToStorage(NOTE_DB, gNotes);
+    return Promise.resolve(gNotes)
 }
 function copy(note) {
     let notes = appSusService.loadFromStorage(NOTE_DB)
     let currNote = JSON.parse(JSON.stringify(note))
+    console.log(currNote);
     let newNote;
     const newId = appSusService.makeId();
     switch (currNote.type) {
@@ -139,7 +142,7 @@ function copy(note) {
             newNote = createNoteImg(currNote.info.txt, currNote.info.title);
             break;
         case 'note-todos':
-            newNote = createNoteTodos(currNote.info.txt, currNote.info.title);
+            newNote = createNoteTodos(currNote.fullTxt, currNote.info.title);
             break;
         case 'note-video':
             newNote = createNoteVideo(currNote.info.txt, currNote.info.title);

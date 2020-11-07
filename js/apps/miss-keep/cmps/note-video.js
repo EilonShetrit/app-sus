@@ -4,7 +4,7 @@ export default {
     props: ['note'],
     template: `
         <section :title="direction" class="note-video">
-        <h2  class="img-title" contenteditable v-text="title"></h2> 
+        <h2  class="img-title" contenteditable v-text="title" @blur="updateTitle"></h2> 
             <section class="video-play">
                 <iframe :src="fixedUrl"></iframe>
             </section>
@@ -27,6 +27,10 @@ export default {
         },
         copyNote(note){
             this.$emit('copy-note', note) 
+        },
+        updateTitle(ev) {
+            this.note.info.title = ev.target.innerText
+            this.updateNote(this.note)
         }
     },
     computed: {

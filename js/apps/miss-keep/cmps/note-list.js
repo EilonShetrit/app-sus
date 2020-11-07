@@ -12,8 +12,8 @@ export default {
     <section class="note-list">
         <ul>
             <li class="note-container" v-for="note in notes" :key="note.id">
-                <component :is="note.type"
-                           :note="note"
+                <component  :is="note.type"
+                            :note="note"
                             @remove-note="removeNote"
                             @update-note="updateNote"
                             @copy-note="copyNote">
@@ -42,7 +42,7 @@ export default {
     },
     created() {
         this.currNotes = this.notes
-        console.log(JSON.parse(JSON.stringify(this.notes)));
+        console.log(this.notes);
     },
     components:{
         noteText,
