@@ -13,8 +13,8 @@ export default {
                     <option>Read</option>
                     <option>Unread</option>
                 </select>
-            <section>
                 <email-sort :emails="emailsToShow" @doSort="setSort" />
+            </section>
             <table v-show="emailsToShow" class="table-emails" >
                 <tr v-for="email in emailsToShow" :key="email.id">
                     <email-preview :email="email" > </email-preview>
