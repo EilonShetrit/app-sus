@@ -5,7 +5,7 @@ export default {
     template: `
         <section class="note-text" :style="{backgroundColor: note.style.backgroundColor}">
         <h2  class="img-title" contenteditable v-text="title" @blur="updateTitle"></h2> 
-        <h1  class="img-title" contenteditable v-text="txt" @blur="updateText"></h1> 
+        <h3  class="img-title" contenteditable v-text="txt" @blur="updateText"></h3> 
             <note-edit @remove-note="removeNote" @update-note="updateNote" @copy-note="copyNote" :note="note"/>
         </section>
     `,
