@@ -5,6 +5,9 @@ import { missKeepService } from '../services/miss-keep-service.js'
 export default {
     template: `
     <section>
+        <section class="note-filter">
+            <input type="text" v-model="filterByTitle">
+        </section>
         <section class="add-new-note">
             <input type="text" v-model="title" placeholder="Enter note title.."/>
             <input type="text" v-model="txt" :placeholder="placeholder" @keyup.enter="onAddNotes"/>
@@ -13,13 +16,14 @@ export default {
             <button @click.stop="setNoteVideo"><img src="../../assets/icons/video.png"/></button>
             <button @click.stop="setNoteTodos"><img src="../../assets/icons/list.png"/></button>
         </section>
-            <note-list :notes="notes" @remove-note="removeNote" @update-note="updateNote"/>      
+            <note-list :notes="notesToShow" @remove-note="removeNote" @update-note="updateNote" @copy-note="copyNote"/>      
     </section>
     `,
     data() {
         return {
             notes: [],
             title: null,
+            filterByTitle: null,
             txt: null,
             noteByType: '',
             placeholder: 'Whats on your mind..'
@@ -43,25 +47,26 @@ export default {
             this.placeholder = 'Enter comma seperated list..'
         },
         onAddNotes() {
+            let newNote;
             switch (this.noteByType) {
                 case 'note-img':
-                    missKeepService.createNoteImg(JSON.parse(JSON.stringify(this.txt)),JSON.parse(JSON.stringify(this.title)));
-                    missKeepService.getNotes()
+                    newNote = missKeepService.createNoteImg(JSON.parse(JSON.stringify(this.txt)), JSON.parse(JSON.stringify(this.title)));
+                    missKeepService.updeteNotes(newNote)
                         .then(notes => this.notes = notes);
                     break;
                 case 'note-video':
-                    missKeepService.createNoteVideo(JSON.parse(JSON.stringify(this.txt)),JSON.parse(JSON.stringify(this.title)));
-                    missKeepService.getNotes()
+                    newNote = missKeepService.createNoteVideo(JSON.parse(JSON.stringify(this.txt)), JSON.parse(JSON.stringify(this.title)));
+                    missKeepService.updeteNotes(newNote)
                         .then(notes => this.notes = notes);
                     break;
                 case 'note-list':
-                    missKeepService.createNoteTodos(JSON.parse(JSON.stringify(this.txt)),JSON.parse(JSON.stringify(this.title)));
-                    missKeepService.getNotes()
+                    newNote = missKeepService.createNoteTodos(JSON.parse(JSON.stringify(this.txt)), JSON.parse(JSON.stringify(this.title)));
+                    missKeepService.updeteNotes(newNote)
                         .then(notes => this.notes = notes);
                     break;
                 default:
-                    missKeepService.createNoteText(JSON.parse(JSON.stringify(this.txt)),JSON.parse(JSON.stringify(this.title)));
-                    missKeepService.getNotes()
+                    newNote = missKeepService.createNoteText(JSON.parse(JSON.stringify(this.txt)), JSON.parse(JSON.stringify(this.title)));
+                    missKeepService.updeteNotes(newNote)
                         .then(notes => this.notes = notes);
             }
             this.txt = '';
@@ -75,14 +80,25 @@ export default {
         updateNote(note) {
             missKeepService.update(note)
                 .then(notes => this.notes = notes);
+        },
+        copyNote(note) {
+            missKeepService.copy(note)
+                .then(notes => this.notes = notes);
         }
     },
     computed: {
-
+        notesToShow() {
+            if (!this.filterByTitle) return this.notes;
+            const txt = this.filterByTitle.toLowerCase();
+            return this.notes.filter(note => note.info.title.toLowerCase().includes(txt))
+        }
     },
     created() {
-        missKeepService.getNotes()
-            .then(notes => this.notes = notes)
+        missKeepService.createNotes()
+            .then(notes => {
+                this.notes = JSON.parse(JSON.stringify(notes))
+                console.log(this.notes)
+            })
     },
     components: {
         noteList

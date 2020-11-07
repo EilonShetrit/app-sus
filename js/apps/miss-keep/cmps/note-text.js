@@ -4,9 +4,9 @@ export default {
     props:['note'],
     template: `
         <section class="note-text">
-            <h2>{{title}}</h2>
-            <h1>{{txt}}</h1>
-            <note-edit @remove-note="removeNote" @update-note="updateNote" :note="note"/>
+        <h2  class="img-title" contenteditable v-text="title"></h2> 
+        <h1  class="img-title" contenteditable v-text="txt"></h1> 
+            <note-edit @remove-note="removeNote" @update-note="updateNote" @copy-note="copyNote" :note="note"/>
         </section>
     `,
     data(){
@@ -21,6 +21,9 @@ export default {
         },
         updateNote(note) {
             this.$emit('update-note', note)
+        },
+        copyNote(note){
+            this.$emit('copy-note', note) 
         }
     },
     created(){

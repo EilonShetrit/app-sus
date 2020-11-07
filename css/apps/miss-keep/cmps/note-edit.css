@@ -1,4 +1,4 @@
-@import '../miss-keep/cmps/note-color.css';
+@import './note-color.css';
 
 .note-edit {
     padding: 1rem;
