@@ -38,6 +38,7 @@ export default {
                if (emailIdx===-1) return;
                var emails= appSusService.loadFromStorage('emailsDB')
                 //    console.log(emails)
+                if (emails[emailIdx].isRead===true) return
                    emails[emailIdx].isRead=true
                    this.emailCopy=emails[emailIdx]
                    appSusService.saveToStorage('emailsDB',emails)
