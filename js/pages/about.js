@@ -13,5 +13,6 @@ export default {
             </section>
         </section>      
     </section>
-    `
+    `,
+
 }
