@@ -6,11 +6,18 @@ header {
 header.app-header nav {
     
     height: 5rem;
+    margin-bottom: 10px;
     
 }
 .logo{
     height: 100%;
     width: 50%;
+}
+.logo span {
+    font-size: 1.3rem;
+    color: #990D35;
+    font-family: comBold;
+   
 }
 
 .links {
@@ -41,6 +48,11 @@ header.app-header nav {
     background-color: #990D35;
     color: #FFF8E8 ;
 }
+
+/* .links .route-links.router-link-exact-active::after{
+    background-color: #990D35;
+    color: #FFF8E8 ;
+} */
 .links .route-links:hover{
     background-color: #e95568 ;
     transition :0.4s;
@@ -52,3 +64,7 @@ header.app-header nav {
     height: 80px;
     object-fit: cover;
 }
+/* .clean-input-focus {
+    box-shadow: 0px 0px 10px 3px  #FFFFFF;
+    background-color: #FFF8E8 ;
+} */

@@ -11,6 +11,9 @@
 .flex.space-between {
     justify-content: space-between;
 }
+.flex.space-around {
+    justify-content: space-around;
+}
 
 .flex.align-center {
     align-items: center;
@@ -29,5 +32,29 @@
 .flex-c.justify-start{
     justify-content: flex-start;
 }
-
+.clean-btn{
+    font-family: comBold, sans-serif;
+    border-radius: 50%;
+    border-radius: 50%;
+    outline-style: none;
+    border: 5px solid #1B4e5f;
+    transition-duration: .5s;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 10px #52fefe, 0px 0px 20px 20px #52fefe inset;
+}
+.clean-btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: .3s;
+    box-shadow: 0px 0px 15px 15px #52fefe, 0px 0px 20px 20px #52fefe inset;
+}
+.clean-input{
+    outline: none;
+    border-radius: 10px;
+    font-family: comReg;
+    background-color: #FFF8E8;
+    margin-bottom: 10px;
+    padding: 2px;
+    color: #990D35;
+}
 

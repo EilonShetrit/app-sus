@@ -39,7 +39,7 @@ const appRouters = [
 
     },   
     {
-        path: '/keep',
+        path: '/notes',
         component: missKeep
     },
     {

@@ -4,8 +4,8 @@
     padding: 1rem;
     align-self: flex-end;
 }
-.note-edit svg {
-    fill: #ffffff;
+.note-edit svg{
+    /* fill:  rgba(255, 255, 255, 0); */
     width: 30px;
     cursor: pointer;
     transition: 100ms ease-in-out;

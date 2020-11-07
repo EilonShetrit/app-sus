@@ -95,7 +95,10 @@ function createNoteTodos(txt, title) {
     for (let i = 0; i < todosTxt.length; i++) {
         note.info.todos[i] = {
             txt: todosTxt[i],
-            doneAt: null
+            doneAt: {
+                timeStemp: Date.now(),
+                fullDate: new Date()
+            }
         }
     }
     return note;

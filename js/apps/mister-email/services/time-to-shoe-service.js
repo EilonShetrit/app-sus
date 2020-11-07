@@ -3,7 +3,7 @@ export const timeToShow = {
 }
 
 function showTime(dateOfMail) {
-    
+    // console.log(dateOfMail)
     var currTimeStemp = Date.now()
     var diff = currTimeStemp - dateOfMail.timeStemp
     var timeForDispaly

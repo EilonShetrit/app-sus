@@ -9,17 +9,16 @@ import noteVideo from '../cmps/note-video.js'
 export default {
     props:['notes'],
     template: `
-    <section class="note-list">
-        <ul>
-            <li class="note-container" v-for="note in notes" :key="note.id">
-                <component  :is="note.type"
+    <section class="notes-list flex space-between">
+            <section class="note-container " v-for="note in notes" :key="note.id">
+                <component  
+                            :is="note.type"
                             :note="note"
                             @remove-note="removeNote"
                             @update-note="updateNote"
                             @copy-note="copyNote">
                 </component> 
-            </li>       
-        </ul>     
+            </section>   
     </section>
     `,
     data(){

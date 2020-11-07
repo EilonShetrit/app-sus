@@ -1,7 +1,7 @@
 import noteEdit from './note-edit.js'
-
+import { timeToShow } from '../../mister-email/services/time-to-shoe-service.js'
 export default {
-    props:['note'],
+    props: ['note'],
     template: `
         <section class="note-todos">
         <h2  class="img-title" contenteditable v-text="title" @blur="updateTitle"></h2>
@@ -19,8 +19,8 @@ export default {
             </section>
         </section>
     `,
-    data(){
-        return{
+    data() {
+        return {
             title: this.note.info.title,
             todos: this.note.info.todos,
         }
@@ -32,26 +32,35 @@ export default {
         updateNote(note) {
             this.$emit('update-note', note)
         },
-        copyNote(note){
-            this.$emit('copy-note', note) 
+        copyNote(note) {
+            this.$emit('copy-note', note)
         },
         updateTitle(ev) {
             this.note.info.title = ev.target.innerText
             this.updateNote(this.note)
         },
-        updateTodo(ev,idx) {
+        updateTodo(ev, idx) {
             this.note.info.todos[idx].txt = ev.target.innerText
             this.updateNote(this.note)
         },
         toggleDoneTodo(todo) {
-            todo.doneAt = (!todo.doneAt)? Date.now() : null;
+            console.log(todo)
+            // this.todo.doneAt = timeToShow.fullDate(this.email.sentAt)
+            todo.doneAt = (!todo.doneAt) ? Date.now() : null;
             this.updateNote(this.note);
         }
     },
-    created(){
+    computed: {
+        // sentAt() {
+        //     return timeToShow.fullDate(this.todo.doneAt)
+        // }
 
     },
-    components:{
+
+    created() {
+
+    },
+    components: {
         noteEdit
     }
 }

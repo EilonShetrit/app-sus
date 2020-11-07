@@ -1,7 +1,77 @@
-
 /* @import '../miss-keep/cmps/note-text.css'; */
+
 @import '../miss-keep/cmps/note-img.css';
 @import '../miss-keep/cmps/note-todos.css';
 /* @import '../miss-keep/cmps/note-video.css'; */
+
 @import '../miss-keep/cmps/note-list.css';
 @import '../miss-keep/cmps/note-edit.css';
+
+.note-filter input {
+    width: 50%;
+    height: 35px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.note-filter input:focus {
+    box-shadow: 0px 0px 10px 3px #FFFFFF;
+    background-color: #FFF8E8;
+}
+
+/* .clean-input{
+
+} */
+
+.input-title {
+    height: 35px;
+    font-size: 0.9rem;
+    width: 35%;
+    text-align: center;
+}
+
+.input-title:focus {
+    box-shadow: 0px 0px 10px 3px #FFFFFF;
+    background-color: #FFF8E8;
+}
+.add-new-note {
+    background-color: #FFF8E8;
+    width: 80%;
+    margin: 0 auto 10px ;
+    border:1px solid black;
+   
+}
+
+.add-new-note:focus-within{
+    box-shadow: 0px 0px 10px 3px #FFFFFF;
+    background-color: #FFF8E8;
+}
+.add-new-note-input {
+    flex-grow: 1;
+   
+}
+.add-new-note-input input, .add-new-note button{
+    background-color: rgba(255, 255, 255, 0);
+   /* opacity: 0; */
+    outline: none;
+}
+
+.add-new-note input{
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+    font-family: comReg, sans-serif;
+    border-radius: 10px;
+    border: none;
+    color: #990D35;
+}
+
+.add-new-note button {
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.add-new-note-btn{
+    fill: rgb(50, 50, 50)
+}
