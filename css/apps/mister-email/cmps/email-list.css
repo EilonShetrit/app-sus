@@ -1,0 +1,18 @@
+table.table-emails tr {
+    width: 700px;
+    background: #ffffbc;
+}
+
+.td1 {
+    min-width: 150px;
+
+}
+.td2 { 
+    min-width:400px;
+}
+.td3{
+    min-width: 150px;
+}
+.sorted-area {
+    background-color: rgb(50, 50, 50);
+}
