@@ -7,7 +7,7 @@ export default {
         
             <table v-show="sentsEmails" >
                 <tr v-for="email in sentsEmails" :key="email.id">
-                      <!-- <email-sent-preview :email="email" > </email-sent-preview> -->
+                      
                       <email-preview :email="email"/>
                 </tr>
             </table> 

@@ -5,15 +5,17 @@ import emailSort from './email-sort.js'
 export default {
     props:['emails'],
     template: `
-        <section>
+        <section> 
+            <section class="sorted-area">
                 <select  v-model="filterBy" @change="onChangeFilter">
                     <option disabled value="">Please select filter</option>
                     <option>All</option>
                     <option>Read</option>
                     <option>Unread</option>
                 </select>
+            <section>
                 <email-sort :emails="emailsToShow" @doSort="setSort" />
-            <table v-show="emailsToShow" >
+            <table v-show="emailsToShow" class="table-emails" >
                 <tr v-for="email in emailsToShow" :key="email.id">
                     <email-preview :email="email" > </email-preview>
                    

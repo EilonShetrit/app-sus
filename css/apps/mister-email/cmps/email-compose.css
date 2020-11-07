@@ -3,13 +3,35 @@
  text-align: start;
  padding: 10px;
 }
-/* .email-compose input[type=text]{
-
+.new-mail-content{
+  background-color: #FFF8E8;
+  width: 700px;
+  /* position: relative; */
+  
 }
-.email-compose input.compose-body[type=text] {
-    width: 100%;
-    height: 100px;
-    /* padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box; */
-  /* } */
+.email-compose h1 {
+  background-color:rgb(50, 50, 50);
+  color: #FFF8E8;
+  margin: 0;
+  padding: 10px;
+}
+.new-mail-content input {
+ border: none;
+ background-color: #FFF8E8;
+}
+.new-mail-content textarea {
+  border: none;
+  outline: none;
+ background-color: #FFF8E8;
+}
+.new-mail-content .compose-email, .new-mail-content .compose-subject{
+  outline: none;
+  width: 600px;
+  
+  font-size: 1.5rem;
+}
+
+.new-mail-content .compose-body{
+  width: 700px;
+  height: 200px;
+}

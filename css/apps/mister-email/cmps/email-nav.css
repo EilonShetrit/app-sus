@@ -1,9 +1,22 @@
 .email-nav {
-    padding: 10px;
-    border:1px solid black;
+    /* padding: 10px; */
+    /* border:1px solid black; */
+    background-color: #FCD581;
+    height: 88vh;
+    width: 200px;
+   border-top: 1px solid #990D35;
 }
+/* .nav-link{
 
+} */
+.compose-btn-bgc {
+  padding: 8px;
+    /* background-color:  #990D35; */
+}
 .compose-btn {
     font-size: 1.5rem;
-    border-radius: 12px;
+    padding: 10px;
+    border-radius: 3em;
+    outline:none;
+    box-shadow: 2px 2px 5px 1px rgb(94, 93, 93);
 }

@@ -4,8 +4,10 @@
 @import './cmps/email-preview.css';
 @import './cmps/email-details.css';
 @import './cmps/email-compose.css';
-.email-nav {
-    /* display: ; */
-    flex-direction: column;
-    background-color: #fff;
+@import './cmps/email-list.css';
+
+table{
+    border-collapse: collapse;
 }
+
+

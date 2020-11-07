@@ -2,17 +2,21 @@ import {appSusService} from '../../../services/util-service.js'
 export default {
     template: `
     <section class="email-compose">
-        <section >
+        
             <h1>new email</h1>
-            <div><span>send to: </span> <label><textarea v-model="newEmail.to" name="compose-to" cols="85%" rows="1" class="compose-email" ></textarea></label></div>
-            <div><span>subject: </span> <label><textarea v-model="newEmail.subject" name="compose-subject" cols="85%" rows="1" class="compose-subject"></textarea></label></div>
-            <div><label><textarea v-model="newEmail.body" name="compose-body" cols="95%" rows="20"></textarea></label></div>
-            <div class="flex space-between">
-                <button class="compose-btn" @click="sendingEmail" >Send</button>
-                <span class="compose-btn trash" @click="deletingEmail"> <i class="fas fa-trash"></i> </span>
+            <div class="new-mail-content">
+                <div><span>send to: </span> <input v-model="newEmail.to" name="compose-to" class="compose-email"/> </div>
+                <hr>
+                <div><span>subject: </span><input v-model="newEmail.subject" name="compose-subject"  class="compose-subject"/></div>
+                <hr>
+                <div><label> <textarea v-model="newEmail.body" name="compose-body" class="compose-body"/></textarea></label></div>
+                <hr>
+                <div class="flex space-between">
+                    <button class="compose-btn" @click="sendingEmail" >Send</button>
+                    <span class="compose-btn trash" @click="deletingEmail"> <i class="fas fa-trash"></i> </span>
+                </div>
             </div>
-        </section>
-        {{newEmail}}
+       
     </section>
     `,
     data(){

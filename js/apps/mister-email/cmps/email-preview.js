@@ -10,14 +10,14 @@ export default {
     template: `
         <section>
             <section  @click="read(email.id)" v-show="!isDetailsShown">
-                    <td :class="{unread: !emailCopy.isRead}"> {{sendFrom}} 
+                    <td class="td1" :class="{unread: !emailCopy.isRead}"> {{sendFrom}} 
                         <span @click.stop="changeUsStar"> 
                             <i v-show="!isStared" class="far fa-star"></i> 
                             <i v-show="isStared" class="fas fa-star"></i>
                         </span>
                     </td>
-                    <td :class="{unread: !emailCopy.isRead}"> {{subjectOfEmail}} - {{bodyOfEmail}} </td>
-                    <td :class="{unread: !emailCopy.isRead}"> {{sentAt}} </td>
+                    <td class="td2" :class="{unread: !emailCopy.isRead}"> {{subjectOfEmail}} - {{bodyOfEmail}} </td>
+                    <td class="td3" :class="{unread: !emailCopy.isRead}"> {{sentAt}} </td>
             </section>
             <section  v-show="isDetailsShown">
                 <email-details @click.native="read" :email="emailCopy"/>

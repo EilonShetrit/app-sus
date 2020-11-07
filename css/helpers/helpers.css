@@ -32,6 +32,12 @@
 .flex-c.justify-start{
     justify-content: flex-start;
 }
+.flex-c.space-between{
+    justify-content:space-between;
+}
+.flex-c.space-around{
+    justify-content:space-around;
+}
 .clean-btn{
     font-family: comBold, sans-serif;
     border-radius: 50%;

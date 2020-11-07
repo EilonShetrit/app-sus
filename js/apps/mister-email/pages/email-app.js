@@ -7,8 +7,7 @@ import emailNav from '../cmps/email-nav.js'
 
 export default {
     template: `
-    <section class="main-mister-email flex">
-        <!-- <h1>mister email..</h1>  -->
+    <section class="main-mister-email flex container">
         <section>
             <email-nav />
         </section> 
@@ -18,11 +17,7 @@ export default {
     `,
     data() {
         return {
-            emails: null,
-            // dates: {
-            //     timeStemp: 1604334597983,
-            //     fullDate: new Date("Fri Nov 06 2020 13:55:29 GMT+0200 (Israel Standard Time)")
-            // }
+            emails: null
         }
     },
     components: {
@@ -35,16 +30,6 @@ export default {
             appSusService.saveToStorage('sentEmailDB', [])
         }
      
-            // appSusService.saveToStorage('emailsDB', this.emails)
-            // this.emails=sendedEmails
-        // console.log(this.emails)
-        // }else  {
-        //     this.emails=sendedEmails
-        // }
-        // console.log(this.emails)
-        
-
-        // 
     },
     methods: {
         
