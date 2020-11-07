@@ -1,2 +1,7 @@
 
+/* @import '../miss-keep/cmps/note-text.css'; */
+@import '../miss-keep/cmps/note-img.css';
+/* @import '../miss-keep/cmps/note-todos.css'; */
+/* @import '../miss-keep/cmps/note-video.css'; */
 @import '../miss-keep/cmps/note-list.css';
+@import '../miss-keep/cmps/note-edit.css';

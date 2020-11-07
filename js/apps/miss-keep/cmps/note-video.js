@@ -1,25 +1,43 @@
+import noteEdit from './note-edit.js'
+
 export default {
-    props:['note'],
+    props: ['note'],
     template: `
-        <section class="note-video">
+        <section :title="direction" class="note-video">
+        <h2  class="img-title" contenteditable v-text="title"></h2> 
             <section class="video-play">
-                <iframe src="url"></iframe>
+                <iframe :src="fixedUrl"></iframe>
             </section>
-            <input type="color" v-model="backgroundColor" >
+            <note-edit @remove-note="removeNote" @update-note="updateNote" @copy-note="copyNote" :note="note"/>
         </section>
     `,
-    data(){
-        return{
+    data() {
+        return {
+            title: this.note.info.title,
             url: this.note.info.txt,
-            backgroundColor: "#ffffff"
-
+            direction: 'click on Youtube button to watch on new tab'
         }
     },
     methods: {
-     
+        removeNote(noteId) {
+            this.$emit('remove-note', noteId)
+        },
+        updateNote(note) {
+            this.$emit('update-note', note)
+        },
+        copyNote(note){
+            this.$emit('copy-note', note) 
+        }
     },
-    created(){
+    computed: {
+        fixedUrl() {
+            return this.url.replace("watch?v=", "embed/");
+        }
+    },
+    created() {
 
+    },
+    components: {
+        noteEdit
     }
 }
-// :backgroundColor="backgroundColor"

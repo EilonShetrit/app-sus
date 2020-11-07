@@ -1,23 +1,29 @@
 import noteList from '../cmps/note-list.js'
 import { missKeepService } from '../services/miss-keep-service.js'
-import { eventBus , EVENT_SHOW_MSG } from '../../../services/event-bus-service.js'
+// import { eventBus , EVENT_SHOW_MSG } from '../../../services/event-bus-service.js'
 
 export default {
     template: `
     <section>
-        <section>
-            <input type="text" v-model="txt" :placeholder="placeholder" @keyup.enter="onAddNotes" />
+        <section class="note-filter">
+            <input type="text" v-model="filterByTitle">
+        </section>
+        <section class="add-new-note">
+            <input type="text" v-model="title" placeholder="Enter note title.."/>
+            <input type="text" v-model="txt" :placeholder="placeholder" @keyup.enter="onAddNotes"/>
             <button @click.stop="setNoteTxt"><img src="../../assets/icons/text.png"/></button>
             <button @click.stop="setNoteImg"><img src="../../assets/icons/picture.png"/></button>
             <button @click.stop="setNoteVideo"><img src="../../assets/icons/video.png"/></button>
             <button @click.stop="setNoteTodos"><img src="../../assets/icons/list.png"/></button>
         </section>
-            <note-list @remove="removeNote" @edit="editNote" :notes="notes"/>      
+            <note-list :notes="notesToShow" @remove-note="removeNote" @update-note="updateNote" @copy-note="copyNote"/>      
     </section>
     `,
     data() {
         return {
             notes: [],
+            title: null,
+            filterByTitle: null,
             txt: null,
             noteByType: '',
             placeholder: 'Whats on your mind..'
@@ -41,47 +47,58 @@ export default {
             this.placeholder = 'Enter comma seperated list..'
         },
         onAddNotes() {
+            let newNote;
             switch (this.noteByType) {
                 case 'note-img':
-                    missKeepService.createNoteImg(JSON.parse(JSON.stringify(this.txt)));
-                    missKeepService.getNotes()
+                    newNote = missKeepService.createNoteImg(JSON.parse(JSON.stringify(this.txt)), JSON.parse(JSON.stringify(this.title)));
+                    missKeepService.updeteNotes(newNote)
                         .then(notes => this.notes = notes);
                     break;
                 case 'note-video':
-                    missKeepService.createNoteVideo(JSON.parse(JSON.stringify(this.txt)));
-                    missKeepService.getNotes()
+                    newNote = missKeepService.createNoteVideo(JSON.parse(JSON.stringify(this.txt)), JSON.parse(JSON.stringify(this.title)));
+                    missKeepService.updeteNotes(newNote)
                         .then(notes => this.notes = notes);
                     break;
                 case 'note-list':
-                    missKeepService.createNoteTodos(JSON.parse(JSON.stringify(this.txt)));
-                    missKeepService.getNotes()
+                    newNote = missKeepService.createNoteTodos(JSON.parse(JSON.stringify(this.txt)), JSON.parse(JSON.stringify(this.title)));
+                    missKeepService.updeteNotes(newNote)
                         .then(notes => this.notes = notes);
                     break;
                 default:
-                    missKeepService.createNoteText(JSON.parse(JSON.stringify(this.txt)));
-                    missKeepService.getNotes()
+                    newNote = missKeepService.createNoteText(JSON.parse(JSON.stringify(this.txt)), JSON.parse(JSON.stringify(this.title)));
+                    missKeepService.updeteNotes(newNote)
                         .then(notes => this.notes = notes);
             }
-            this.txt = ''
+            this.txt = '';
+            this.title = '';
             console.log(this.notes);
         },
-        removeNote(noteId){
+        removeNote(noteId) {
             missKeepService.remove(noteId)
-            .then(() => eventBus.$emit(EVENT_SHOW_MSG, 'Note Deleted'))
-            .catch(err => console.log('something went wrong', err)) 
+                .then(notes => this.notes = notes);
         },
-        editNote(){
-            missKeepService.edit(noteId)
-            .then(() => eventBus.$emit(EVENT_SHOW_MSG, 'Note Edited'))
-            .catch(err => console.log('something went wrong', err)) 
+        updateNote(note) {
+            missKeepService.update(note)
+                .then(notes => this.notes = notes);
+        },
+        copyNote(note) {
+            missKeepService.copy(note)
+                .then(notes => this.notes = notes);
         }
     },
     computed: {
-
+        notesToShow() {
+            if (!this.filterByTitle) return this.notes;
+            const txt = this.filterByTitle.toLowerCase();
+            return this.notes.filter(note => note.info.title.toLowerCase().includes(txt))
+        }
     },
     created() {
-        missKeepService.getNotes()
-            .then(notes => this.notes = notes)
+        missKeepService.createNotes()
+            .then(notes => {
+                this.notes = JSON.parse(JSON.stringify(notes))
+                console.log(this.notes)
+            })
     },
     components: {
         noteList

@@ -1,0 +1,6 @@
+
+.note-img img{
+    max-width: 250px;
+    height: 220px;
+    object-fit: cover;
+}

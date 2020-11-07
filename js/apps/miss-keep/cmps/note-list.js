@@ -1,8 +1,9 @@
-
+import { eventBus , EVENT_SHOW_MSG } from '../../../services/event-bus-service.js'
 import noteText from '../cmps/note-text.js'
 import noteImg from '../cmps/note-img.js'
 import noteTodos from '../cmps/note-todos.js'
 import noteVideo from '../cmps/note-video.js'
+
 
 
 export default {
@@ -10,37 +11,43 @@ export default {
     template: `
     <section class="note-list">
         <ul>
-            <li v-for="note in notes" :key="note.id">
+            <li class="note-container" v-for="note in notes" :key="note.id">
                 <component :is="note.type"
-                           :note="note">
+                           :note="note"
+                            @remove-note="removeNote"
+                            @update-note="updateNote"
+                            @copy-note="copyNote">
                 </component> 
-                <button @click="emitRemove(note.id)">delete</button>
-                <button @click="emitEdit(note.id)">edit</button>
-            </li>   
+            </li>       
         </ul>     
     </section>
     `,
-    // data() {
-        
-    // },
+    data(){
+        return{
+            currNotes: []
+        }
+    },
     methods: {
-        emitRemove(noteId){
-            console.log('removing', noteId);
-            this.$emit('remove', noteId);
+        removeNote(noteId) {
+            this.$emit('remove-note', noteId)
         },
-        emitEdit(noteId){
-            console.log('editing', noteId);
-            this.$emit('edit', noteId);
+        updateNote(note) {
+            this.$emit('update-note', note)
         },
+        copyNote(note){
+            this.$emit('copy-note', note) 
+        }
     },
     computed: {
     },
     created() {
+        this.currNotes = this.notes
+        console.log(JSON.parse(JSON.stringify(this.notes)));
     },
     components:{
         noteText,
         noteImg,
         noteTodos,
-        noteVideo
+        noteVideo,
     }
 }

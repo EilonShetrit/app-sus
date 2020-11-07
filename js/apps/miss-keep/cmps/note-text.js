@@ -1,23 +1,35 @@
-
+import noteEdit from './note-edit.js'
 
 export default {
     props:['note'],
     template: `
         <section class="note-text">
-            <h2>{{txt}}</h2>
-            <input type="color" v-model="backgroundColor">
+        <h2  class="img-title" contenteditable v-text="title"></h2> 
+        <h1  class="img-title" contenteditable v-text="txt"></h1> 
+            <note-edit @remove-note="removeNote" @update-note="updateNote" @copy-note="copyNote" :note="note"/>
         </section>
     `,
     data(){
         return{
             txt: this.note.info.txt,
-            backgroundColor: "#ffffff"
+            title: this.note.info.title,
         }
     },
     methods: {
-     
+        removeNote(noteId) {
+            this.$emit('remove-note', noteId)
+        },
+        updateNote(note) {
+            this.$emit('update-note', note)
+        },
+        copyNote(note){
+            this.$emit('copy-note', note) 
+        }
     },
     created(){
 
+    },
+    components:{
+        noteEdit
     }
 }
