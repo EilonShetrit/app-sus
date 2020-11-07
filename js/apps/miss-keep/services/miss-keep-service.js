@@ -21,10 +21,10 @@ function createNotes() {
     let loadedNotes = appSusService.loadFromStorage(NOTE_DB)
     if (!loadedNotes  || !loadedNotes .length){
         loadedNotes = []
-        loadedNotes.unshift(createNoteText('Audu Mea', 'My new car'));
+        loadedNotes.unshift(createNoteText('You must Kapara !!!', 'Get better at Vue'));
         loadedNotes.unshift(createNoteImg('https://www.photo-art.co.il/wp-content/uploads/2015/07/BY1A5781.jpg', 'Desktop picture'));
         loadedNotes.unshift(createNoteTodos('Buy PS5, Clean the house', 'Todo things'));
-        loadedNotes.unshift(createNoteVideo('https://www.youtube.com/watch?v=3MCZqjAccrE', 'Watch later'));
+        loadedNotes.unshift(createNoteVideo('https://www.youtube.com/watch?v=oXx2TczveMI', 'Watch later'));
     }
     gNotes = loadedNotes;
     appSusService.saveToStorage(NOTE_DB, gNotes);
@@ -95,10 +95,7 @@ function createNoteTodos(txt, title) {
     for (let i = 0; i < todosTxt.length; i++) {
         note.info.todos[i] = {
             txt: todosTxt[i],
-            doneAt: {
-                timeStemp: Date.now(),
-                fullDate: new Date()
-            }
+            doneAt: null,
         }
     }
     return note;

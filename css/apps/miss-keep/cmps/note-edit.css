@@ -1,12 +1,12 @@
 @import './note-color.css';
 
 .note-edit {
-    padding: 1rem;
-    align-self: flex-end;
+    padding-top: 1rem;
+    justify-content: flex-end;
 }
 .note-edit svg{
     fill: rgb(50, 50, 50);
-    width: 30px;
+    width: 25px;
     cursor: pointer;
     transition: 100ms ease-in-out;
 }
@@ -18,5 +18,6 @@
 }
 
 .note-edit svg.pinned{
-    fill: #000;
+    fill:red;
+    /* stroke:red; */
 }

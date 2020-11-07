@@ -1,5 +1,4 @@
 import noteEdit from './note-edit.js'
-import { timeToShow } from '../../mister-email/services/time-to-shoe-service.js'
 export default {
     props: ['note'],
     template: `
@@ -44,20 +43,11 @@ export default {
             this.updateNote(this.note)
         },
         toggleDoneTodo(todo) {
-            // this.todo.doneAt = timeToShow.fullDate(this.email.sentAt)
-            todo.doneAt = (!todo.doneAt) ? Date.now() : null;
+            todo.doneAt = !todo.doneAt ? new Date().toString().split(' ')[4] : null;
             this.updateNote(this.note);
         }
     },
     computed: {
-        // sentAt() {
-        //     return timeToShow.fullDate(this.todo.doneAt)
-        // },
-
-    },
-
-    created() {
-
     },
     components: {
         noteEdit

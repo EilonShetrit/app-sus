@@ -18,9 +18,9 @@ export default {
                 'LightYellow': '#FFF8E8',
                 'Yellow': '#FCD581',
                 'Green': '#7cff6b',
-                'Red': '#D52941',
+                'Red': '#ff8a8a',
                 'DarkRed':'#a02346',
-                'Pink': '#ff0084',
+                'Pink': '#ffc0cb',
                 'BlueSky': '#52fefe',
             }
         }
