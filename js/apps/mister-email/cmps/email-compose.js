@@ -22,7 +22,12 @@ export default {
                 to:'',
                 subject :'',
                 body:'',
-                sentAt:'' //(new Date().toLocaleDateString())
+                isStar:false,
+                sentAt: {
+                    timeStemp: '',
+                    fullDate: ''
+
+                } //(new Date().toLocaleDateString())
             }
         }
     },
@@ -30,10 +35,14 @@ export default {
        
         sendingEmail() {
             this.newEmail.id=appSusService.makeId()
-            this.newEmail.sentAt=(new Date().toLocaleDateString())
+            this.newEmail.sentAt={
+                timeStemp:Date.now(),
+                fullDate:new Date()
+            }
             var sents= appSusService.loadFromStorage('sentEmailDB')
-            sents.push(this.newEmail)
+            sents.unshift(this.newEmail)
             appSusService.saveToStorage('sentEmailDB',sents)
+            this.$router.push('/email/sent')
 
         },
         deletingEmail(){
